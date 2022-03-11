@@ -8,11 +8,12 @@ Feature: Login Feature
     And A user clicks on the login button
     Then A user will be logged in
     And A user clicks New Post
-    Then A user enter an article title "randomValue"
+    Then A user enter an article title "randomArtcileee"
     And A user write what this article is about "Article demo"
     And A user write Markdown "this is demo"
     And A user write a tag "#this is a tag"
     And A user clicks on post button
-    Then A user write down a comment
+    Then A user enters comment page
+    And A user write down a comment "MyComment"
     And A user click on post button
    
