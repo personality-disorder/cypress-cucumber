@@ -25,21 +25,25 @@ And ('A user clicks New Post', () => {
 Then ('A user enter an article title {string}', randomValue => {
     cy.get(':nth-child(1) > .form-control').type(randomValue)
 })
-And ('A user write what this article is about "Article demo"', () => {
+And ('A user write what this article is about {string}', () => {
     cy.get(':nth-child(2) > .form-control').type('This article is about test')
 })
-And ('A user write Markdown "this is demo"', () => {
+And ('A user write Markdown {string}', () => {
     cy.get(':nth-child(3) > .form-control').type('Writing something here bla bla bla')
 })
-And ('A user write a tag "#this is a tag"', () => {
+And ('A user write a tag {string}', () => {
     cy.get(':nth-child(4) > .form-control').type('#test tag')
 })
 And ('A user clicks on post button', () => {
     cy.get('.btn').click()
 })
-Then ('A user write down a comment', () => {
-    cy.get('.form-control').type('My comment is welcomed here')
+Then ('A user enters comment page', () => {
+    cy.url().should('contains', '/article/')
+})
+And ('A user write down a comment {string}', () => {
+    cy.get('.form-control').type('MyComment')
 })
 And ('A user click on post button', () => {
     cy.get('.card-footer > .btn').click()
 })
+
